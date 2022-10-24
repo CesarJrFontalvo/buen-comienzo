@@ -4,17 +4,13 @@ const router = Router();
 const {
     getEntities,
     getContarctById,
-    createUser,
-    updateUser,
-    deleteUser } = require('../controllers/index.controller');
+    getSedeById } = require('../controllers/index.controller');
 
 
 
 router.get('/entities', getEntities);
-
 router.get('/contract/:id', getContarctById);
-router.post('/users', createUser);
-router.put('/users/:id', updateUser)
-router.delete('/users/:id', deleteUser);
+router.get('/sede/:id', getSedeById);
+
 
 module.exports = router;

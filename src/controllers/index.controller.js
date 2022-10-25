@@ -1,17 +1,9 @@
-const { Pool } = require('pg');
-
-const pool = new Pool({
-    user: 'buencom',
-    host: 'localhost',
-    password: 'root',
-    database: 'buencom',
-    port: '5432'
-});
-
+const pool = require("../../config/dataConfig");
+const {  query_entities } = require("../../database/query");
 
 
 const getEntities = async (req, res) => {
-    const response = await pool.query("select id, modelo->>'RAZON_SOCIAL' as razon_social, modelo->>'NUMERO_DOCUMENTO' as numero_documento from  nbc_entidades order by modelo->>'RAZON_SOCIAL'");
+    const response = await pool.query(query_entities);
     res.status(200).json(response.rows);
 };
 

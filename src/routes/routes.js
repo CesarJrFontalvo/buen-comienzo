@@ -8,9 +8,9 @@ const {
 
 
 
-router.get('/entities', getEntities);
-router.get('/contract/:id', getContarctById);
-router.get('/sede/:id', getSedeById);
+router.get('/api/v1/entities', getEntities);
+router.get('/api/v1/contract/:id', getContarctById);
+router.get('/api/v1/sede/:id', getSedeById);
 
 
 module.exports = router;
